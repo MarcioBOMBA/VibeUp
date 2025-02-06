@@ -1,0 +1,51 @@
+main{
+    background: var(--background-color);
+}
+.fancy-title{
+    font-family: var(--InstrumentSans);
+    font-weight: 900;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+}
+.btn-fill{
+    border: none;
+    background: black;
+    color: white;
+    font-weight: 700;
+    font-family: var(--Montserrat);
+    padding: 0px 25px;
+
+    &:hover{
+        border: 1px solid black;
+    }
+}
+.btn-outline{
+    border: 1px solid black;
+    background: white;
+    color: black;
+    font-weight: 700;
+    font-family: var(--Montserrat);
+    padding: 0px 25px;
+
+    &:hover{
+        background: rgb(213, 221, 236);
+        border: 1px solid black;
+    }
+}
+.btn-round{
+    border-radius: 300px;
+}
+.btn-w-medium{
+    max-width: 380px;
+    width: 100%;
+}
+.btn-primary{
+    background: var(--primary-color);
+    &:hover{
+        border: none;
+    }
+}

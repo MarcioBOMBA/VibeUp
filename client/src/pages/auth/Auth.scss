@@ -1,0 +1,48 @@
+.auth-container {
+    min-height: 100vh;
+    background-color: white;
+    display: flex;
+}
+.image-container {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-container {
+    flex: 1;
+    padding-top: 3%;
+    padding-right: 30px;
+    display: flex;
+    align-items: center;
+
+    div {
+        max-width: 800px;
+        h2 {
+            font-size: 3.5rem;
+        }
+        .select-auth,
+        .sign-in {
+            width: 50%;
+            min-width: 300px;
+            position: relative;
+        }
+        .sign-in {
+            padding-top: 20px;
+            h5 {
+                font-family: var(--Raleway);
+                font-weight: 700;
+                letter-spacing: -0.5px;
+            }
+        }
+    }
+}
+
+//temporary
+.sqr-cont {
+    width: 50%;
+    height: 50%;
+    max-width: 300px;
+    max-height: 300px;
+    background-color: var(--contrast-color);
+}

@@ -20,7 +20,7 @@ npm run dev
 
 #### Ligh-Theme:
 
-- background-color: #828589;
+- background-color: #EFF1F2;
 - primary-color: #008DDA;
 - secondary-color: #113F67;
 - complementary-color: #828589;
@@ -44,6 +44,7 @@ npm run dev
 - Inter
 - Raleway
 - RedHatDisplay
+- InstrumentSans
 
 ## Team
 
