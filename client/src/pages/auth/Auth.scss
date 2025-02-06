@@ -1,14 +1,17 @@
+// --- AUTH PAGE ---
 .auth-container {
     min-height: 100vh;
     background-color: white;
     display: flex;
 }
+
 .image-container {
     flex: 0 0 45%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .form-container {
     flex: 1;
     padding-top: 3%;
@@ -36,6 +39,72 @@
             }
         }
     }
+}
+
+// --- LOGIN PAGE ---
+.sign-in-container {
+    height: 100vh;
+
+    .form-container {
+        padding: 0;
+        justify-content: center;
+
+        form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 35px;
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+        }
+    }
+    .form-title {
+        margin-bottom: 30px;
+        h2 {
+            font-family: var(--Montserrat);
+            font-weight: 900;
+        } //    transform: translateX(calc(-50% - 100px));
+    }
+}
+
+// --- REGISTER PAGE ---
+.form-content {
+    display: flex;
+    justify-content: space-between;
+    width: calc(200%);
+    transition: 0.2s;
+    position: relative;
+
+    .form-part {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+            align-self: flex-end;
+        }
+
+        &:last-child {
+            position: relative;
+            left: 200px;
+        }
+    }
+    &.active {
+        transform: translateX(calc(-50% - 200px));
+    }
+}
+.row-back-arrow {
+    background: none;
+    border: none;
+    position: absolute;
+    top: -22px;
+    left: -22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    font-weight: 700;
+    font-family: var(--InstrumentSans);
 }
 
 //temporary

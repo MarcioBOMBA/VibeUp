@@ -1,17 +1,17 @@
-main{
+main {
     background: var(--background-color);
 }
-.fancy-title{
+.fancy-title {
     font-family: var(--InstrumentSans);
     font-weight: 900;
 }
-.btn{
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 45px;
 }
-.btn-fill{
+.btn-fill {
     border: none;
     background: black;
     color: white;
@@ -19,11 +19,11 @@ main{
     font-family: var(--Montserrat);
     padding: 0px 25px;
 
-    &:hover{
+    &:hover {
         border: 1px solid black;
     }
 }
-.btn-outline{
+.btn-outline {
     border: 1px solid black;
     background: white;
     color: black;
@@ -31,21 +31,64 @@ main{
     font-family: var(--Montserrat);
     padding: 0px 25px;
 
-    &:hover{
+    &:hover {
         background: rgb(213, 221, 236);
         border: 1px solid black;
     }
 }
-.btn-round{
+.btn-round {
     border-radius: 300px;
 }
-.btn-w-medium{
+.btn-w-medium {
     max-width: 380px;
     width: 100%;
 }
-.btn-primary{
+.btn-primary {
     background: var(--primary-color);
-    &:hover{
+    &:hover {
         border: none;
+    }
+}
+
+.input-text {
+    label {
+        font-family: var(--Montserrat);
+        font-weight: 600;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+    .input-error {
+        padding-left: 10px;
+        color: var(--error-color);
+    }
+    input {
+        margin-top: 5px;
+        padding: 0.5rem 0.7rem;
+        border-radius: 10px;
+        border: 1px solid rgb(209 213 219);
+
+        &:focus-visible {
+            outline: 2px solid var(--primary-color) !important;
+        }
+        &::placeholder {
+            color: rgb(142, 143, 145);
+        }
+    }
+    .input-container {
+        position: relative;
+    }
+    .pass-eye {
+        position: absolute;
+        display: flex;
+        right: 5px;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: var(--secondary-color);
     }
 }
