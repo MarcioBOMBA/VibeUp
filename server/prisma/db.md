@@ -75,6 +75,8 @@
 #### explaining
 
 (relation: Notification N - 1 User)
+(relation: Notification N - 1 Vibe)
+(relation: Notification N - 1 User the notification come from)
 
 - id: identifica a notificação (unique)
 - userId: remetente
@@ -99,6 +101,7 @@
 #### explaining
 
 (relation: Vibe N - 1 User)
+(relation: Vibe N - 1 Vibe)
 
 - id: identificador
 - userId: usuario criador
@@ -135,3 +138,14 @@
 - name: nome da tag
 - posts: número de posts que possuem a tag
 
+### ReVibe
+
+- vibeId
+- userId
+
+#### explanation
+
+(relation: Vibe N - N User)
+
+- vibeId: indentificador do vibe
+- userId: identificador do usuario
