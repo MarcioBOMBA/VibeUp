@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int       @id @default(autoincrement())
+  idName      String    @unique
+  email       String    @unique
+  password    String
+  phone       String?
+  timezone    String
+  type        String
+  verified    Boolean
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  
+  Profile     Profile?
+  Vibes       Vibe[]
+  Notifications Notification[]
+  RelatedNotifications Notification[] @relation("UserFrom")
+  Follows     Follow[] @relation("UserFollows")
+  Followers   Follow[] @relation("UserFollowers")
+  Likes       Like[]
+  ReVibes     ReVibe[]
+}
+
+model Profile {
+  userId      Int       @unique
+  name        String
+  description String?
+  profile_url String?
+  banner_url  String?
+  birth_date  DateTime?
+  private     Boolean
+  User        User      @relation(fields: [userId], references: [id])
+}
+
+model Follow {
+  followerId  Int
+  followedId  Int
+  UserFollows User      @relation("UserFollows", fields: [followerId], references: [id])
+  UserFollowers User    @relation("UserFollowers", fields: [followedId], references: [id])
+  @@id([followerId, followedId])
+}
+
+model Notification {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  vibeId      Int?
+  title       String
+  content     String?
+  read        Boolean
+  createdAt   DateTime  @default(now())
+  userFromId  Int
+  User        User      @relation(fields: [userId], references: [id])
+  Vibe        Vibe?     @relation(fields: [vibeId], references: [id])
+  UserFrom    User      @relation("UserFrom", fields: [userFromId], references: [id])
+}
+
+model Vibe {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  parentId    Int?
+  content     String
+  media_url   String?
+  read        Int       @default(0)
+  likes       Int       @default(0)
+  comments    Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  Tags        Tag[]     @relation("VibeTags")
+  User        User      @relation(fields: [userId], references: [id])
+  ParentVibe  Vibe?     @relation("ParentVibe", fields: [parentId], references: [id])
+  ChildVibes  Vibe[]    @relation("ParentVibe")
+  Likes       Like[]
+  ReVibes     ReVibe[]
+  RelatedNotifications Notification[]
+}
+
+model Like {
+  vibeId      Int
+  userId      Int
+  Vibe        Vibe      @relation(fields: [vibeId], references: [id])
+  User        User      @relation(fields: [userId], references: [id])
+  @@id([vibeId, userId])
+}
+
+model Tag {
+  id          Int       @id @default(autoincrement())
+  name        String    @unique
+  posts       Int       @default(0)
+  Vibes       Vibe[]    @relation("VibeTags")
+}
+
+model ReVibe {
+  vibeId      Int
+  userId      Int
+  Vibe        Vibe      @relation(fields: [vibeId], references: [id])
+  User        User      @relation(fields: [userId], references: [id])
+  @@id([vibeId, userId])
+}

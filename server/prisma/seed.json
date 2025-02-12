@@ -1,0 +1,28 @@
+{
+    "user": [
+        {
+            "idName": "jotavezim", 
+            "email": "joaovictorgouveiar@gmail.com",
+            "password": "123456",
+            "phone": "83991961041",
+            "timezone": "America/São_Paulo",
+            "type": "admin",
+            "verified": true,
+            "perfil": {
+                "name": "jvOdeiaDisc",
+                "description": "Formado em Nada e Informática",
+                "profile_url": "https://t3.ftcdn.net/jpg/03/02/36/78/360_F_302367868_kmLRcRsrsSBe6x6k9K4aPEyEEdAAaJXB.jpg",
+                "banner_url": null,
+                "birth_date": "21-07-2006",
+                "private": false
+            }
+        }
+    ],
+    "vibe": [
+        {
+            "user": "jotavezim",
+            "content": "Vibe de teste",
+            "media_url": null
+        }
+    ]
+}
